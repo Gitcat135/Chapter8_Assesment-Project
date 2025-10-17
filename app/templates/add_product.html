@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <u><h1 style="margin-bottom: 30px;">Add Products</h1></u>
+        <div class="col-md-4">
+
+        </div>
+
+        <div class="col-md-4">
+            <form action="" method="post" novalidate>
+                {{form.hidden_tag() }}
+
+                <p>
+                    {{form.product_name.label }} <br>
+                    {{form.product_name(size=32) }} <br>
+                    {% for error in form.product_name.errors %}
+                        <span style="color: red;">
+                            {{error}}
+                        </span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{form.product_decription.label }} <br>
+                    {{form.product_decription(size=32) }} <br>
+                    {% for error in form.product_decription.errors %}
+                        <span style="color: red;">
+                            {{error}}
+                        </span>
+                    {% endfor %}
+                </p>
+
+                 <p>
+                    {{form.stock_available.label }} <br>
+                    {{form.stock_available}} <br>
+                    {% for error in form.stock_available.errors %}
+                        <span style="color: red;">
+                            {{error}}
+                        </span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{form.submit() }}
+                </p>
+
+                
+        </div>
+
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+{% endblock %}
